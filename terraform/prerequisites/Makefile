@@ -17,14 +17,14 @@ pr: clean
 	terraform init --backend-config=config/pr.config
 	terraform plan -var-file=pr.tfvars -out=.terraform/terraform-pr.tfplan
 
-apply-np:
+np-apply:
 	terraform apply .terraform/terraform-np.tfplan
 
-apply-pr:
+pr-apply:
 	terraform apply .terraform/terraform-pr.tfplan
 
-destroy-np:
+np-destroy:
 	terraform destroy -var-file=np.tfvars 
 
-destroy-pr:
+pr-destroy:
 	terraform destroy -var-file=pr.tfvars 	
